@@ -1,0 +1,146 @@
+UPDATE FOR THE PROJECT OF
+GETTING AND CLEANING DATA COURSE OF COURSERA
+30/01/2016
+
+Feature Selection 
+=================
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals time.accelerometer.[xyz] and time.gyroscope.[xyz]. These time domain signals were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (time.body.accelerometer.[xyz] and time.gravity.accelerometer.[xyz]) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (time.body.accelerometerjerk.[xyz] and time.body.gyroscopejerk.[xyz]). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (time.body.accelerometermag, time.gravity.accelerometermag, time.body.accelerometerjerkmag, time.body.gyroscopemag, time.body.gyrojerkmag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing frequency.body.accelerometer.[xyz], frequency.body.accelerometerjerk.[xyz], frequency.body.gyroscope.[xyz], frequency.body.accelerometerjerkjag, frequency.body.gyroscopemag, frequency.body.gyroscopejerkmag. 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'.[xyz]' is used to denote 3-axial signals in the X, Y and Z directions.
+
+Note that in the following ".[xyz]" means ".x" or ".y" or ".z", as a regular expression.
+
+time.body.accelerometer.[xyz]
+time.gravity.accelerometer.[xyz]
+time.body.accelerometerjerk.[xyz]
+time.body.gyroscope.[xyz]
+time.body.gyroscopemerk.[xyz]
+time.body.accelerometermag
+time.gravity.accelerometermag
+time.body.accelerometerjerkmag
+time.body.gyroscopemag
+time.body.gyroscopejerkmag
+frequency.body.accelerometer.[xyz]
+frequency.body.accelerometerJerk.[xyz]
+frequency.body.gyroscope.[xyz]
+frequency.body.accelerometermag
+frequency.body.accelerometerjerkmag
+frequency.body.gyroscopemag
+frequency.body.gyroscopejerkmag
+
+The set of variables that were estimated from these signals are: 
+
+mean: Mean value
+std: Standard deviation
+meanFreq: Weighted average of the frequency components to obtain a mean frequency
+
+You must mix the names of variables with "mean", "std" or "meanfreq", as for example: "frequency.body.gyroscope.meanfreq.y"
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravitymean
+time.body.accelerometermean
+time.body.accelerometerjerkmean
+time.body.gyroscopemean
+time.body.gyroscopejerkmean
+
+You must mix them with the angle() function as for example: "angle(x.gravitymean)"
+
+In the first two column you have the "subject" id and the "activity" to which the data correspond.
+
+The complete list of the 88 variables of each feature vector is:
+
+ [1] "subject"                                           
+ [2] "activity"                                          
+ [3] "time.body.accelerometer.mean.x"                    
+ [4] "time.body.accelerometer.mean.y"                    
+ [5] "time.body.accelerometer.mean.z"                    
+ [6] "time.body.accelerometer.std.x"                     
+ [7] "time.body.accelerometer.std.y"                     
+ [8] "time.body.accelerometer.std.z"                     
+ [9] "time.gravity.accelerometer.mean.x"                 
+[10] "time.gravity.accelerometer.mean.y"                 
+[11] "time.gravity.accelerometer.mean.z"                 
+[12] "time.gravity.accelerometer.std.x"                  
+[13] "time.gravity.accelerometer.std.y"                  
+[14] "time.gravity.accelerometer.std.z"                  
+[15] "time.body.accelerometerjerk.mean.x"                
+[16] "time.body.accelerometerjerk.mean.y"                
+[17] "time.body.accelerometerjerk.mean.z"                
+[18] "time.body.accelerometerjerk.std.x"                 
+[19] "time.body.accelerometerjerk.std.y"                 
+[20] "time.body.accelerometerjerk.std.z"                 
+[21] "time.body.gyroscope.mean.x"                        
+[22] "time.body.gyroscope.mean.y"                        
+[23] "time.body.gyroscope.mean.z"                        
+[24] "time.body.gyroscope.std.x"                         
+[25] "time.body.gyroscope.std.y"                         
+[26] "time.body.gyroscope.std.z"                         
+[27] "time.body.gyroscopejerk.mean.x"                    
+[28] "time.body.gyroscopejerk.mean.y"                    
+[29] "time.body.gyroscopejerk.mean.z"                    
+[30] "time.body.gyroscopejerk.std.x"                     
+[31] "time.body.gyroscopejerk.std.y"                     
+[32] "time.body.gyroscopejerk.std.z"                     
+[33] "time.body.accelerometermag.mean"                   
+[34] "time.body.accelerometermag.std"                    
+[35] "time.gravity.accelerometermag.mean"                
+[36] "time.gravity.accelerometermag.std"                 
+[37] "time.body.accelerometerjerkmag.mean"               
+[38] "time.body.accelerometerjerkmag.std"                
+[39] "time.body.gyroscopemag.mean"                       
+[40] "time.body.gyroscopemag.std"                        
+[41] "time.body.gyroscopejerkmag.mean"                   
+[42] "time.body.gyroscopejerkmag.std"                    
+[43] "frequency.body.accelerometer.mean.x"               
+[44] "frequency.body.accelerometer.mean.y"               
+[45] "frequency.body.accelerometer.mean.z"               
+[46] "frequency.body.accelerometer.std.x"                
+[47] "frequency.body.accelerometer.std.y"                
+[48] "frequency.body.accelerometer.std.z"                
+[49] "frequency.body.accelerometer.meanfreq.x"           
+[50] "frequency.body.accelerometer.meanfreq.y"           
+[51] "frequency.body.accelerometer.meanfreq.z"           
+[52] "frequency.body.accelerometerjerk.mean.x"           
+[53] "frequency.body.accelerometerjerk.mean.y"           
+[54] "frequency.body.accelerometerjerk.mean.z"           
+[55] "frequency.body.accelerometerjerk.std.x"            
+[56] "frequency.body.accelerometerjerk.std.y"            
+[57] "frequency.body.accelerometerjerk.std.z"            
+[58] "frequency.body.accelerometerjerk.meanfreq.x"       
+[59] "frequency.body.accelerometerjerk.meanfreq.y"       
+[60] "frequency.body.accelerometerjerk.meanfreq.z"       
+[61] "frequency.body.gyroscope.mean.x"                   
+[62] "frequency.body.gyroscope.mean.y"                   
+[63] "frequency.body.gyroscope.mean.z"                   
+[64] "frequency.body.gyroscope.std.x"                    
+[65] "frequency.body.gyroscope.std.y"                    
+[66] "frequency.body.gyroscope.std.z"                    
+[67] "frequency.body.gyroscope.meanfreq.x"               
+[68] "frequency.body.gyroscope.meanfreq.y"               
+[69] "frequency.body.gyroscope.meanfreq.z"               
+[70] "frequency.body.accelerometermag.mean"              
+[71] "frequency.body.accelerometermag.std"               
+[72] "frequency.body.accelerometermag.meanfreq"          
+[73] "frequency.body.accelerometerjerkmag.mean"          
+[74] "frequency.body.accelerometerjerkmag.std"           
+[75] "frequency.body.accelerometerjerkmag.meanfreq"      
+[76] "frequency.body.gyroscopemag.mean"                  
+[77] "frequency.body.gyroscopemag.std"                   
+[78] "frequency.body.gyroscopemag.meanfreq"              
+[79] "frequency.body.gyroscopejerkmag.mean"              
+[80] "frequency.body.gyroscopejerkmag.std"               
+[81] "frequency.body.gyroscopejerkmag.meanfreq"          
+[82] "angle(time.body.accelerometermean.gravity)"        
+[83] "angle(time.body.accelerometerjerkmean.gravitymean)"
+[84] "angle(time.body.gyroscopemean.gravitymean)"        
+[85] "angle(time.body.gyroscopejerkmean.gravitymean)"    
+[86] "angle(x.gravitymean)"                              
+[87] "angle(y.gravitymean)"                              
+[88] "angle(z.gravitymean)"   
